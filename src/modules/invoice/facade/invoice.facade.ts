@@ -1,6 +1,5 @@
 import FindInvoiceUsecase from "../usecase/find-invoice/find-invoice.usecase";
 import GenerateInvoiceUsecase from "../usecase/generate-invoice/generate-invoice.usecase";
-import { AddClientFacadeInputDto, AddClientFacadeOutputDto, FindClientFacadeInputDto, FindClientFacadeOutputDto } from "./client-adm.facade.interface";
 import InvoiceFacadeInterface, { FindInvoiceFacadeInputDTO, FindInvoiceFacadeOutputDTO, GenerateInvoiceFacadeInputDto, GenerateInvoiceFacadeOutputDto } from "./invoice.facade.interface";
 
 export default class InvoiceFacade implements InvoiceFacadeInterface {
