@@ -1,7 +1,7 @@
 import Id from "../../@shared/domain/value-object/id.value-object";
 import ProductEntity from "../domain/product.entity";
 import ProductGateway from "../gateway/product.gateway";
-import ProductModel from "./product.model";
+import { ProductModel } from "./product.model";
 
 export default class ProductRepository implements ProductGateway {
     async add(product: ProductEntity): Promise<void> {
@@ -10,6 +10,7 @@ export default class ProductRepository implements ProductGateway {
             name: product.name,
             description: product.description,
             purchasePrice: product.purchasePrice,
+            salesPrice: product.salesPrice,
             stock: product.stock,
             createdAt: new Date(),
             updatedAt: new Date(),
@@ -27,6 +28,7 @@ export default class ProductRepository implements ProductGateway {
             name: productdb.name,
             description: productdb.description,
             purchasePrice: productdb.purchasePrice,
+            salesPrice: productdb.salesPrice,
             stock: productdb.stock,
             createdAt: productdb.createdAt,
             updatedAt: productdb.updatedAt,

@@ -17,6 +17,7 @@ export default class ProductAdmFacade implements ProductAdmFacadeInterface {
             description: input.description,
             name: input.name,
             purchasePrice: input.purchasePrice,
+            salesPrice: input.salesPrice,
             stock: input.stock
         })
     }

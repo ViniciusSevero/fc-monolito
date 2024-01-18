@@ -27,7 +27,15 @@ describe("Client ADM Facade integration tests", () => {
             id: "1",
             name: "test 1",
             email: "teste@teste.com.br",
-            address: "test 1 address"
+            document: "123456789",
+            address: {
+                street: "street",
+                number: "number",
+                complement: "complement",
+                city: "city",
+                state: "state",
+                zipCode: "zipCode",
+            }
         }
 
 
@@ -40,7 +48,7 @@ describe("Client ADM Facade integration tests", () => {
         expect(output.id).toBe(input.id)
         expect(output.name).toBe(input.name)
         expect(output.email).toBe(input.email)
-        expect(output.address).toBe(input.address)
+        expect(output.address).toStrictEqual(input.address)
         expect(output.createdAt).toBeDefined()
         expect(output.updatedAt).toBeDefined()
     })

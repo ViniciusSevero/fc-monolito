@@ -30,7 +30,15 @@ describe("Client Repository Unit testes", () => {
             id: new Id("1"),
             name: "test",
             email: "test@test.com.br",
-            address: "test's address"
+            document: "12345566789",
+            address: {
+                street: "street",
+                number: "number",
+                complement: "complement",
+                city: "city",
+                state: "state",
+                zipCode: "zipCode"
+            }
         })
 
         await repository.add(client)
@@ -41,7 +49,12 @@ describe("Client Repository Unit testes", () => {
         expect(foundClient.id.id).toBe(client.id.id)
         expect(foundClient.name).toBe(client.name)
         expect(foundClient.email).toBe(client.email)
-        expect(foundClient.address).toBe(client.address)
+        expect(foundClient.address.street).toBe(client.address.street)
+        expect(foundClient.address.number).toBe(client.address.number)
+        expect(foundClient.address.complement).toBe(client.address.complement)
+        expect(foundClient.address.city).toBe(client.address.city)
+        expect(foundClient.address.state).toBe(client.address.state)
+        expect(foundClient.address.zipCode).toBe(client.address.zipCode)
         expect(foundClient.createdAt).toBeDefined()
         expect(foundClient.updatedAt).toBeDefined()
     })

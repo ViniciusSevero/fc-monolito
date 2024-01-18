@@ -1,3 +1,4 @@
+import Address from "../../../@shared/domain/value-object/address.value-object";
 import Id from "../../../@shared/domain/value-object/id.value-object";
 import Client from "../../domain/client.entity";
 import ClientGateway from "../../gateway/client.gateway";
@@ -12,13 +13,15 @@ export default class AddClientUsecase {
             id: new Id(input.id),
             name: input.name,
             email: input.email,
-            address: input.address
+            document: input.document,
+            address: new Address(input.address)
         })
         await this._clientRepository.add(client);
         return {
             id: client.id.id,
             name: client.name,
             email: client.email,
+            document: client.document,
             address: client.address,
             createdAt: client.createdAt,
             updatedAt: client.updatedAt

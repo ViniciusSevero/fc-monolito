@@ -11,7 +11,15 @@ export default class FindClientUsecase {
             id: result.id.id,
             name: result.name, 
             email: result.email, 
-            address: result.address, 
+            document: result.document, 
+            address: {
+                street: result.address.street,
+                number: result.address.number,
+                complement: result.address.complement,
+                city: result.address.city,
+                state: result.address.state,
+                zipCode: result.address.zipCode,
+            }, 
             createdAt: result.createdAt, 
             updatedAt: result.updatedAt, 
         }

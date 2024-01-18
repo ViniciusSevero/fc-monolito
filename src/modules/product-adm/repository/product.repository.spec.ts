@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize-typescript"
 import Id from "../../@shared/domain/value-object/id.value-object";
 import Product from "../domain/product.entity";
-import ProductModel from "./product.model";
+import { ProductModel } from "./product.model";
 import ProductRepository from "./product.repository";
 
 describe("Product Repository Unit testes", () => {
@@ -31,6 +31,7 @@ describe("Product Repository Unit testes", () => {
             name: "Product 1",
             description: "Description Product 1",
             purchasePrice: 100,
+            salesPrice: 200,
             stock: 10
         })
         await repository.add(product);
@@ -44,6 +45,7 @@ describe("Product Repository Unit testes", () => {
         expect(productdb.name).toEqual(product.name)
         expect(productdb.description).toEqual(product.description)
         expect(productdb.purchasePrice).toEqual(product.purchasePrice)
+        expect(productdb.salesPrice).toEqual(product.salesPrice)
         expect(productdb.stock).toEqual(product.stock)
         expect(productdb.createdAt).toBeDefined()
         expect(productdb.updatedAt).toBeDefined()
@@ -56,6 +58,7 @@ describe("Product Repository Unit testes", () => {
             name: "Product 1",
             description: "Description Product 1",
             purchasePrice: 100,
+            salesPrice: 200,
             stock: 10
         })
 
@@ -64,6 +67,7 @@ describe("Product Repository Unit testes", () => {
             name: product.name,
             description: product.description,
             purchasePrice: product.purchasePrice,
+            salesPrice: product.salesPrice,
             stock: product.stock,
             createdAt: new Date(),
             updatedAt: new Date(),
@@ -77,6 +81,7 @@ describe("Product Repository Unit testes", () => {
         expect(productDb.name).toEqual(product.name)
         expect(productDb.description).toEqual(product.description)
         expect(productDb.purchasePrice).toEqual(product.purchasePrice)
+        expect(productDb.salesPrice).toEqual(product.salesPrice)
         expect(productDb.stock).toEqual(product.stock)
         expect(productDb.createdAt).toBeDefined()
         expect(productDb.updatedAt).toBeDefined()
